@@ -1,0 +1,7 @@
+/*
+	Theme Name: Sumatra Starter Theme
+	Author: Bhakti Pasaribu
+	Author URI: http://sumatrastudio.com
+	Version: 1.0
+*/
+.burger-menu{width:23px;height:18px;cursor:pointer;position:relative;margin-left:auto;}.burger-menu .bar{width:100%;height:2px;background:#ffa500;position:absolute;transition:.3s all ease;}.burger-menu .bar:first-child{transform-origin:right top;top:0}.burger-menu .bar:nth-child(1){top:50%;margin-top:-1px}.burger-menu .bar:last-child{transform-origin:right bottom;bottom:0}body.header-is-active header .burger-menu .bar:first-child{transform:translateY(0) translateX(-4px) rotate(-45deg)}body.header-is-active header .burger-menu .bar:nth-child(2){transform:translateX(-10px);opacity:0}body.header-is-active header .burger-menu .bar:last{transform:translateY(0) translateX(-4px) rotate(45deg)}/*# sourceMappingURL=style.css.map */

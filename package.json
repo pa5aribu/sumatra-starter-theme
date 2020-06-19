@@ -1,0 +1,24 @@
+{
+  "name": "julian-ctas",
+  "version": "1.0.0",
+  "description": "CTAS",
+  "main": "index.js",
+  "scripts": {
+		"tailwind": "tailwind build src/tailwind.css -o css/tailwind.css",
+		"tailwind:minify": "cleancss -o css/tailwind.min.css css/tailwind.css",
+		"stylus": "stylus -w -c -m --include-css stylus/style.styl -o style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balapa/sumatra-starter-theme.git"
+  },
+  "author": "Bhakti Pasaribu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balapa/sumatra-starter-theme/issues"
+  },
+  "homepage": "https://github.com/balapa/sumatra-starter-theme#readme",
+  "dependencies": {
+    "tailwindcss": "^1.4.6"
+  }
+}

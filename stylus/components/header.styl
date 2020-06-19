@@ -1,0 +1,33 @@
+/** burger menu **/
+.burger-menu
+	width 23px
+	height 18px
+	cursor pointer
+	position relative
+	margin-left auto
+	.bar
+		width 100%
+		height 2px
+		background orange
+		position absolute
+		transition 0.3s all ease
+		&:first-child
+			transform-origin right top
+			top 0
+		&:nth-child(1)
+			top 50%
+			margin-top -1px
+		&:last-child
+			transform-origin right bottom
+			bottom 0
+
+/** burger menu active state **/
+body.header-is-active header
+	.burger-menu
+		.bar:first-child
+			transform translateY(0) translateX(-4px) rotate(-45deg)
+		.bar:nth-child(2)
+			transform translateX(-10px)
+			opacity 0
+		.bar:last
+			transform translateY(0) translateX(-4px) rotate(45deg)
