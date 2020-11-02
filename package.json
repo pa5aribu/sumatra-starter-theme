@@ -1,12 +1,12 @@
 {
-  "name": "julian-ctas",
-  "version": "1.0.0",
+  "name": "sumatra-starter-theme",
+  "version": "1.1.0",
   "description": "CTAS",
   "main": "index.js",
   "scripts": {
-		"tailwind": "tailwind build src/tailwind.css -o css/tailwind.css",
-		"tailwind:minify": "cleancss -o css/tailwind.min.css css/tailwind.css",
-		"stylus": "stylus -w -c -m --include-css stylus/style.styl -o style.css"
+    "tailwind": "tailwind build assets/tailwind/tailwind.css -o assets/css/tailwind.css",
+    "tailwind:minify": "cleancss -o assets/css/tailwind.min.css assets/css/tailwind.css",
+    "stylus": "stylus -w -c -m --include-css stylus/style.styl -o style.css"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/balapa/sumatra-starter-theme/issues"
   },
-  "homepage": "https://github.com/balapa/sumatra-starter-theme#readme",
-  "dependencies": {
-    "tailwindcss": "^1.4.6"
-  }
+  "homepage": "https://github.com/balapa/sumatra-starter-theme#readme"
 }

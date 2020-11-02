@@ -1,0 +1,31 @@
+article
+	h1
+		font-weight 700
+		font-size 95px
+		line-height 95px
+
+	h2
+		font-size 45px
+		font-weight 600
+		line-height 48.6px
+	h3
+		font-weight 500
+		font-size 30px
+		line-height 42px
+		margin-bottom 15px
+
+	ul
+		padding-top 10px
+		li
+			line-height 1.35
+			padding-left 40px
+			position relative
+			&:before
+				content ''
+				position absolute
+				top 2px
+				left 0
+				square(24px)
+				background url(assets/img/check-icon.svg) no-repeat center center / cover
+		li:not(:last-child)
+			margin-bottom 20px
