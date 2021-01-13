@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tailwind": "tailwind build assets/tailwind/tailwind.css -o assets/css/tailwind.css",
-    "tailwind:minify": "cleancss -o assets/css/tailwind.min.css assets/css/tailwind.css",
-    "stylus": "stylus -w -c -m --include-css stylus/style.styl -o style.css"
+    "stylus": "stylus -w -c -m --include-css assets/stylus/style.styl -o style.css"
   },
   "repository": {
     "type": "git",
@@ -17,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/balapa/sumatra-starter-theme/issues"
   },
-  "homepage": "https://github.com/balapa/sumatra-starter-theme#readme"
+  "homepage": "https://github.com/balapa/sumatra-starter-theme#readme",
+  "devDependencies": {
+    "tailwindcss": "^2.0.2"
+  }
 }

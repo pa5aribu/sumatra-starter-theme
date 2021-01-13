@@ -37,13 +37,24 @@
 	function get_scripts() {
 		$dir = get_template_directory_uri();
 		wp_enqueue_style( 'tailwind', $dir . '/assets/css/tailwind.css' );
-		wp_enqueue_style( 'style', $dir . '/assets/style.css' );
+		wp_enqueue_style( 'style', $dir . '/style.css' );
 
 		wp_enqueue_script( 'vendors', $dir . '/assets/js/vendors.js', '', false, true );
 		wp_enqueue_script( 'main', $dir . '/assets/js/main.js', '', false, true );
 	}
 
 	add_action( 'wp_enqueue_scripts', 'get_scripts' );
+
+	add_filter('script_loader_tag', 'add_type_attribute' , 10, 3);
+	function add_type_attribute($tag, $handle, $src) {
+		// if not your script, do nothing and return original $tag
+		if ( 'main' !== $handle ) {
+				return $tag;
+		}
+		// change the script tag by adding type="module" and return it.
+		$tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+		return $tag;
+	}
 
 	// ACF
 	if( function_exists('acf_add_options_page') ) {

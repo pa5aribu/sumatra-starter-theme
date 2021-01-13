@@ -1,7 +1,7 @@
 		<!-- footer -->
-		<footer class="my-10">
+		<footer class="py-20 bg-black h-3/6">
 			<div class="container">
-
+				<h1 class="text-white">I'm Footer</h1>
 			</div>
 		</footer>
 
@@ -9,3 +9,4 @@
 
 	</body>
 </html>
+
