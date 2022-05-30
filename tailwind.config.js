@@ -9,34 +9,36 @@ module.exports = {
   corePlugins: {
     container: false
   },
-  plugins: [
-    function ({ addComponents }) {
-      addComponents({
-        '.container': {
-					marginLeft: 'auto',
-					marginRight: 'auto',
-          maxWidth: '100%',
-          '@screen sm': {
-            maxWidth: '640px',
-          },
-          '@screen md': {
-            maxWidth: '768px',
-          },
-          '@screen lg': {
-            maxWidth: '1024px',
-          },
-          '@screen xl': {
-            maxWidth: '1200px',
-          },
-        }
-      })
-    }
-	],
 	theme: {
 		extend: {
+      fontSize: {
+        '45px': '45px',
+        '30px': '30px',
+        '26px': '26px',
+        '22px': '22px',
+        '18px': '18px',
+        '14px': '14px',
+      },
 			colors: {
-				'example': '#4256A2',
-			}
+        'blue': '#4569E0'
+			},
+      width: {
+        '110': '110%',
+        '120': '120%',
+        '130': '130%',
+        '140': '140%',
+        '150': '150%',
+        '160': '160%',
+        '170': '170%',
+        '180': '180%',
+        '190': '190%',
+        '200': '200%',
+      }
 		}
-	}
+	},
+  variants: {
+    extend: {
+      padding: ['last', 'first']
+    }
+  },
 }

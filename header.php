@@ -17,42 +17,44 @@
 		
 	</head>
 
-	<body>
+	<body class="antialiased">
+
+		<div id="overlay" class="hidden">
+			<?php get_template_part('template-parts/overlay') ?>
+		</div>
 
 		<!-- header -->
-		<header class="sticky top-0 py-6 bg-white border-b border-gray-300">
+		<header id="header" class="sticky z-30 bg-white"
+			<?php
+				if(is_page_template('templates/home.php')) {
+					echo ' data-type="home" ';
+				}
+			?>
+			>
 			<div class="container">
 
-				<div class="flex flex-wrap items-center justify-between">
-					<a class="block h-10 logo" href="<?php echo home_url() ?>">
-						<img class="h-full" src="<?php echo $baseURL ?>/assets/img/logo.svg"
-							alt="<?php bloginfo('name') ?>">
+				<div class="flex flex-wrap items-center header-inner">
+					<a class="block header-logo" href="<?php echo home_url() ?>">
+						<?php get_template_part('template-parts/header', 'logo') ?>
 					</a>
 
-					<div class="flex items-center right-side">
-						<ul class="flex items-center header-nav space-x-8">
-							<?php
-								$menu = wp_get_nav_menu_items('Primary', array());
-								if($menu) {
-									foreach( $menu as $item ) :
-										$url = esc_url( get_permalink( get_page_by_title( $item->title ) ) );
-										echo '<li><a href="'. $url .'">'. $item->title .'</a></li>';
-									endforeach;
-								}
-							?>
-							<li>
-								<a class="button" href="">Login</a>
-							</li>
-						</ul>
+					<?php
+						wp_nav_menu( array(
+							'menu' => 'Primary',
+							'container' => 'ul',
+							'menu_class' => 'header-nav'
+						));
+					?>
 
-						<div class="block burger-menu md:hidden">
+					<div class="flex flex-wrap items-center ml-auto md:ml-0">
+						<a class="header-button" data-type="solid-primary" href="<?php echo home_url() ?>/">Button</a>
+						<div class="block ml-5 burger-menu md:hidden">
 							<div class="bar"></div>
 							<div class="bar"></div>
 							<div class="bar"></div>
 						</div>
 					</div>
-				</div>
+         </div>
 
-				</div>
 			</div>
 		</header>

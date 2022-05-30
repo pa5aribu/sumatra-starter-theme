@@ -1,0 +1,165 @@
+// overlay
+#overlay
+	position fixed
+	top 0
+	left 0
+	width 100vw
+	height 100vh
+	z-index 50
+	svg
+		display block
+		width 100%
+		height 100%
+	#top, #bottom, #center
+		opacity 0
+
+// impact
+#impact-list
+	.stats-text
+		font-size 20px
+		position relative
+		&:not(:last-child)
+			margin-bottom 10px
+		&:last-child
+			margin-top 10px
+	.stats-text-mask
+		font-size 90px
+		font-weight 700
+		line-height 1.15
+		-webkit-text-fill-color transparent
+		-webkit-background-clip text
+		background-position center
+		background-size cover
+
+	+above(md)
+		.stats-item:first-child
+			.stats-text-mask
+				.text-2
+					padding-left 100px
+		.stats-item:nth-child(2)
+			.stats-text-1
+				left -100px
+			.stats-text-2
+				left 100px
+
+	+below(md)
+		.stats-text
+			font-size 15px
+		.stats-text-mask
+			font-size 56px
+			background-image unset !important
+			-webkit-background-clip unset
+			-webkit-text-fill-color unset
+
+
+// state
+#state-hero
+	.state-waves
+		transform scaleY(-1) scaleX(-1)
+
+#state-featured-header
+	.header-waves
+		transform scaleY(-1) scaleX(-1)
+		position relative
+		top -1px
+
+
+// contact
+#contact-hero
+	.container
+		min-height calc(100vh - 100px)
+
+
+// support
+#support-hero
+	position relative
+	position relative
+
+	.hero-image
+		width 115%
+
+	.hero-waves
+		position absolute
+		bottom 0
+		left 0
+		width 100%
+		transform translateY(43%)
+
+#support-resources
+	.support-waves
+		transform scaleX(-1)
+
+.has-pseudo-bg
+	position relative
+	&:after
+		content ''
+		position absolute
+		bottom 0
+		left 0
+		width 100%
+		height 100px
+		background inherit
+		transform translateY(100%)
+
+
+
+// faq
+.faq-list
+	.faq-item
+		border-bottom 1px solid black
+		&.is-active
+			.faq-question #y
+				opacity 0
+			.faq-answer
+				display block
+
+	.svg-wrapper
+		square(35px)
+		position absolute
+		top 15px
+		right 0
+		background orange
+		padding 8px
+		border-radius 50%
+		svg
+			display block
+		#y
+			transition .3s all ease
+
+	.faq-question
+		padding 20px 0
+		padding-right 50px
+		cursor pointer
+		font-size 18px
+		font-weight 500
+		position relative
+
+	.faq-answer
+		padding-bottom 20px
+		display none
+
+	+below(md)
+		.svg-wrapper
+			square(30px)
+			top 18px
+
+// donate
+#donate-hero
+	.donate-form
+		iframe
+			margin 0 !important
+			width 100% !important
+			max-width 100% !important
+			
+#donate-content
+	.donate-form
+		position relative
+		margin-top -540px
+
+	+below(lg)
+		.donate-form
+			margin-top -450px
+
+	+below(md)
+		.donate-form
+			margin-top 0

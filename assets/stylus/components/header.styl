@@ -1,33 +1,235 @@
-/** burger menu **/
+#header
+	transition .3s box-shadow ease
+	top 0
+
+	.header-logo
+		width 165px
+
+	.header-inner
+		height headerHeight
+
+	&[data-type="dark"]:not(.is-active)
+		background colorPrimary
+
+	&[data-type="dark"]:not(.is-active)
+		color white
+		.header-logo
+			#text,
+			#logo
+				fill white
+		.burger-menu .bar
+			background white
+		.header-nav > li > a:before
+			background white
+		.header-button
+			background unset
+			border-color white
+			&:hover
+				background white
+				color greenDark
+
+	&.is-scrolled
+		box-shadow shadow
+
+	// responsive
+	+below(md)
+
+		&.is-active
+			position sticky
+			position -webkit-sticky
+			box-shadow none
+			.header-nav
+				display block	
+			.burger-menu .bar
+				&:first-child
+					transform translateY(0) translate(-4px, -2px) rotate(-45deg)
+				&:nth-child(2)
+					transform translateX(-10px)
+					opacity 0	
+				&:last-child
+					transform translateY(0) translate(-4px, 2px) rotate(45deg)
+
+		.header-logo
+			width 118px
+
+		.header-inner
+			height headerHeightMobile
+
+		&[data-type="dark"]:not(.is-active)
+			.header-nav
+				background colorPrimary
+
+		&[data-type="dark"]:not(.is-active)
+			.header-nav
+				&:before
+					background white
+					opacity .25
+				.menu-item > a:before
+					background white
+
+
+
+// header nav
+.header-nav
+	display flex
+	flex-wrap wrap
+	align-items center
+	margin-left auto
+	position relative
+	font-weight 500
+
+	.menu-item
+		&.current-menu-item,
+		&.current-menu-parent
+			> a:before
+				width 100%
+		&:hover
+			> a:before
+				width 100%
+				left 0
+		> a
+			display inline-block
+			position relative
+			&:before
+				content ''
+				position absolute
+				display block
+				width 0%
+				right 0
+				bottom 13px
+				height 2px
+				background black
+				transition .3s all ease
+			&:hover
+				&:before
+					width 100%
+					left 0
+
+	.sub-menu
+		.menu-item
+			> a
+				white-space pre
+				&:before
+					bottom 2px
+
+	// responsive
+	+above(md)
+		> li
+			position relative
+			margin-right 40px
+			> a
+				line-height 50px
+			&:hover
+				.sub-menu
+					opacity 1
+					pointer-events auto
+
+		.sub-menu
+			position absolute
+			top 50px
+			left 50%
+			transform translateX(-50%)
+			background white
+			color black
+			padding 30px
+			box-shadow 0 2px 2px 0 rgba(0,0,0,.15)
+			border-radius 10px
+			min-width 200px
+			pointer-events none
+			opacity 0
+			transition .3s all ease
+			> li
+				&:not(:last-child)
+					margin-bottom 10px
+
+	+below(md)
+		display none
+		background greenLight
+		left 0
+		width 100%
+		padding 0 25px
+		top headerHeightMobile
+		height calc(100% - 85px)
+		position fixed
+		.menu-item-has-children
+			position relative
+			&.sub-menu-is-active
+				&:after
+					transform scaleY(-1)
+				.sub-menu
+					display block
+			&:after
+				content ''
+				width 20px
+				transform-origin center
+				transition .3s all ease
+				height 11px
+				display block
+				position absolute
+				background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 10'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='arrow-down' stroke='%23383333' stroke-width='2' d='m1 1 8 8m7.8-8-9 8'/%3E%3C/g%3E%3C/svg%3E")
+				background-size contain
+				background-position center center
+				top 37px
+				right 0
+		> .menu-item
+			padding 20px 0
+			> a
+				font-size 29px
+				font-weight 600
+				&:before
+					display none
+			&:not(:last-child)
+				border-bottom 1px solid black
+		.sub-menu
+			margin-top 25px
+			padding-left 30px
+			font-size 18px
+			font-weight 500
+			display none
+			> .menu-item
+				&:not(:last-child)
+					margin-bottom 15px
+
+
+
+// donate button
+.header-button
+	padding 10px 20px
+	border-radius 50px
+	border-width 1px
+	display inline-block
+	transition .3s all ease
+	background colorPrimary
+	color white
+	font-weight 500
+	&:hover
+		opacity .85
+	&:before
+		display none
+
+	+below(md)
+		font-size 14px
+		padding 8px 16px
+
+// burger menu
 .burger-menu
-	width 23px
+	position relative
+	width 30px
 	height 18px
 	cursor pointer
-	position relative
-	margin-left auto
+
 	.bar
 		width 100%
 		height 2px
 		background black
 		position absolute
-		transition 0.3s all ease
+		transition .3s all ease
 		&:first-child
 			transform-origin right top
 			top 0
-		&:nth-child(1)
+		&:nth-child(2)
 			top 50%
 			margin-top -1px
 		&:last-child
 			transform-origin right bottom
 			bottom 0
-
-/** burger menu active state **/
-body.header-is-active header
-	.burger-menu
-		.bar:first-child
-			transform translateY(0) translateX(-4px) rotate(-45deg)
-		.bar:nth-child(2)
-			transform translateX(-10px)
-			opacity 0
-		.bar:last
-			transform translateY(0) translateX(-4px) rotate(45deg)
