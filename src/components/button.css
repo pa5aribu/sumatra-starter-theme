@@ -1,0 +1,8 @@
+.button {
+    @apply font-medium shadow shadow-primary/50 pt-2 px-5 pb-[10px] text-white inline-block rounded-full;
+    background-color: theme('colors.primary');
+    transition: .3s all ease;
+    &:hover {
+        background-color: theme('colors.secondary');
+    }
+}

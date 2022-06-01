@@ -11,38 +11,34 @@
 		));
 
 		// list wrapper
-		echo '<div class="card-list flex flex-wrap -mx-4">';
+		echo '<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">';
 			foreach( $items as $index=>$item ) :
 
 				$ID = $item->ID;
 				$url = get_permalink( $item->ID );
 
-				/** insights & news **/
+				// post
 				if( $args['post_type'] == 'post' ) :
 					$post_type = $item->post_type;
 				?>
 
-				<div class="md:w-1/2 lg:w-1/3 px-4 mb-10">
-					<div class="card">
+					<div data-aos="fade-up" class="card shadow-md bg-white">
 						<a href="<?php echo $url ?>">
 							<?php
-								echo get_the_post_thumbnail( $item, 'post-thumbnail', array(
-									'class' => 'w-full h-64 object-cover'
+								echo get_the_post_thumbnail( $item, 'medium' , array(
+									'class' => 'w-full aspect-[4/2.5] object-cover'
 								));
 							?>
 						</a>
-						<a href="<?php echo $url ?>" class="block mt-5">
-							<div class="card-date text-gray-600 text-sm"><?php echo get_the_date() ?></div>
-							<div class="card-title"><?php echo $item->post_title ?></div>
+						<a href="<?php echo $url ?>" class="block p-8">
+							<div class="text-gray-500 mb-2 text-sm"><?php echo get_the_date() ?></div>
+							<div class="text-lg"><?php echo $item->post_title ?></div>
 						</a>
 					</div>
-				</div>
 
 				<?php endif;
-				/** insights & news ends **/
 
 			endforeach;
 		echo '</div>';
-		// list wrapper ends
 
 	}

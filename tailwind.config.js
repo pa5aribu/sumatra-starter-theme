@@ -1,44 +1,23 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
-	// purge: {
-	// 	enabled: true,
-	// 	content: [
-	// 		'./*.php',
-	// 		'./**/*.php'
-	// 	]
-  // },
   corePlugins: {
     container: false
   },
+  content: ["./**/*.php"],
 	theme: {
 		extend: {
-      fontSize: {
-        '45px': '45px',
-        '30px': '30px',
-        '26px': '26px',
-        '22px': '22px',
-        '18px': '18px',
-        '14px': '14px',
+      colors: {
+        'primary': '#3867d6',
+        'secondary': '#4b7bec',
       },
-			colors: {
-        'blue': '#4569E0'
-			},
-      width: {
-        '110': '110%',
-        '120': '120%',
-        '130': '130%',
-        '140': '140%',
-        '150': '150%',
-        '160': '160%',
-        '170': '170%',
-        '180': '180%',
-        '190': '190%',
-        '200': '200%',
+      fontFamily: {
+        'display': ['Noto Serif', 'serif'],
+        'body': ['Open Sans', 'sans-serif']
       }
 		}
 	},
-  variants: {
-    extend: {
-      padding: ['last', 'first']
-    }
-  },
+  plugins: [
+    require('@tailwindcss/typography')
+  ]
 }

@@ -1,7 +1,0 @@
-@font-face {
-    font-family: 'Custom Font';
-    src: url('assets/fonts/custom-font.woff2') format('woff2'),
-        url('assets/fonts/custom-font.woff') format('woff');
-    font-style: normal;
-    font-display: swap;
-}

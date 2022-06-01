@@ -1,0 +1,227 @@
+#header {
+
+	.burger-menu {
+		#on, #off {
+			transition: .3s all ease;
+		}
+		#on {
+			opacity: 0;
+		}
+	}
+
+	&.is-scrolled {
+		box-shadow: theme('boxShadow.md');
+	}
+
+	&.is-active {
+		.burger-menu #on {
+			opacity: 1;
+		}
+		.burger-menu #off {
+			opacity: 0;
+		}
+	}
+}
+
+.header-nav {
+	>li {
+		position: relative;
+	}
+	.menu-item.current-menu-item {
+		>a {
+			&:before {
+				width: 100%;
+			}
+		}
+	}
+	.menu-item.current-menu-parent {
+		>a {
+			&:before {
+				width: 100%;
+			}
+		}
+	}
+	.menu-item-has-children {
+		&:hover {
+			>a {
+				&:before {
+					width: 100%;
+					left: 0;
+				}
+			}
+		}
+	}
+	.menu-item {
+		>a {
+			display: inline-block;
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 0%;
+				right: 0;
+				bottom: 13px;
+				height: 2px;
+				background: #000;
+				transition: 0.3s all ease;
+			}
+			&:hover {
+				&:before {
+					width: 100%;
+					left: 0;
+				}
+			}
+		}
+	}
+	.sub-menu {
+		.menu-item {
+			>a {
+				white-space: pre;
+				&:before {
+					bottom: 2px;
+				}
+			}
+		}
+	}
+}
+
+/* responsive **/
+
+@media (min-width: 768px) {
+	.header-nav {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-left: auto;
+		>li {
+			&:not(:first-child) {
+				margin-left: theme('spacing.10');
+			}
+			>a {
+				line-height: 50px;
+			}
+			&:hover {
+				.sub-menu {
+					opacity: 1;
+					pointer-events: auto;
+				}
+			}
+		}
+		.sub-menu {
+			position: absolute;
+			top: 50px;
+			left: 50%;
+			transform: translateX(-50%);
+			background: #fff;
+			color: #000;
+			padding: 30px;
+			box-shadow: theme('boxShadow.md');
+			border-radius: theme('borderRadius.md');
+			border-top: 1px solid #eee;
+			min-width: 200px;
+			pointer-events: none;
+			opacity: 0;
+			transition: 0.3s all ease;
+			>li {
+				&:not(:last-child) {
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.menu-item-has-children {
+			>a {
+				position: relative;
+				padding-right: 25px;
+				&:after {
+					content: '';
+					width: 16px;
+					height: 8px;
+					transform-origin: center;
+					transition: 0.3s all ease;
+					display: block;
+					position: absolute;
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 10'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='arrow-down' stroke='%23383333' stroke-width='2' d='m1 1 8 8m7.8-8-9 8'/%3E%3C/g%3E%3C/svg%3E");
+					background-size: contain;
+					background-position: center center;
+					top: 22px;
+					right: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	#header.is-active {
+		.header-nav {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+
+	.header-nav {
+		background: white;
+		left: 0;
+		width: 100%;
+		padding: 0 theme('spacing.6');
+		height: calc(100vh - 80px);
+		position: fixed;
+		opacity: 0;
+		transition: .3s all ease;
+		pointer-events: none;
+		>li {
+			>a {
+				font-size: 20px;
+			}
+		}
+		.menu-item-has-children {
+			position: relative;
+			&:after {
+				content: '';
+				width: 16px;
+				height: 8px;
+				transform-origin: center;
+				transition: 0.3s all ease;
+				display: block;
+				position: absolute;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 10'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='arrow-down' stroke='%23383333' stroke-width='2' d='m1 1 8 8m7.8-8-9 8'/%3E%3C/g%3E%3C/svg%3E");
+				background-size: contain;
+				background-position: center center;
+				top: 30px;
+				right: 0;
+			}
+		}
+		.menu-item-has-children.sub-menu-is-active {
+			&:after {
+				transform: scaleY(-1);
+			}
+			.sub-menu {
+				display: block;
+			}
+		}
+		>.menu-item {
+			padding: 20px 0;
+			>a {
+				&:before {
+					display: none;
+				}
+			}
+			&:not(:last-child) {
+				border-bottom: 1px solid #ddd;
+			}
+		}
+		.sub-menu {
+			margin-top: 25px;
+			padding-left: 20px;
+			font-weight: 500;
+			border-left: 1px solid #ddd;
+			display: none;
+			>.menu-item {
+				&:not(:last-child) {
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+}

@@ -1,11 +1,12 @@
 {
   "name": "sumatra-starter-theme",
-  "version": "1.1.0",
-  "description": "CTAS",
+  "version": "2",
+  "description": "Sumatra Starter Theme",
   "main": "index.js",
   "scripts": {
-    "tailwind": "tailwind build assets/tailwind/tailwind.css -o assets/css/tailwind.css",
-    "stylus": "stylus -w -c -m --include-css assets/stylus/style.styl -o style.css"
+    "watch-tailwind": "postcss ./src/style.css -o ./style.css --watch --verbose",
+    "watch-all": "browser-sync start --proxy 'sst.local' --files '**/*.php,*.css,**/*.js'",
+    "dev": "concurrently 'npm:watch-tailwind' 'npm:watch-all'"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/balapa/sumatra-starter-theme#readme",
   "devDependencies": {
-    "tailwindcss": "^2.0.2"
+    "@tailwindcss/typography": "^0.5.2",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.1.0",
+    "tailwindcss": "^3.0.24"
   }
 }

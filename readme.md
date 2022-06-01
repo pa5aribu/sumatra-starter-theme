@@ -1,20 +1,16 @@
 ## Sumatra Starter Theme
 
-### Templates
-This theme has 2 pre-built templates. The templates are located in templates folder. They are as follows:
-1. Homepage
-2. Contact
+Sumatra Starter Theme is a starter theme that uses TailwindCSS version 3 and browser-sync to speed up
+WordPress development. It also comes with stylus to write CSS that can't be achieved using tailwindCSS.
 
-### Styling
-This theme is built with tailwindcss and stylus. Tailwind is used for most of the styles whereas stylus is used for a more complex CSS.
+### Requirements
+1. Install browser-sync [https://browsersync.io/#install]{here}.
+2. Install tailwindcss [https://tailwindcss.com/docs/installation]{here}.
 
-#### 1. Tailwind
-You need to run this command every time you make changes to src/style.css.
-`yarn tailwind`
+### How to use
+1. Start browser-sync => `npm run browser-sync`
+2. Start tailwind watcher => `npm run tailwind`
 
-If you need to minify tailwind.
-`yarn tailwind:minify`
+--
 
-#### 2. Stylus
-You need to run this command once if you're editing files inside stylus folder.
-`yarn stylus`
+Created by @balapa

@@ -1,13 +1,12 @@
 		<!-- footer -->
-		<footer class="py-20">
+		<footer id="footer" class="py-12 md:py-20 bg-gray-200">
 			<div class="container">
 				<div class="flex flex-wrap justify-between">
 					<div class="w-full mb-8 md:w-4/12 md:mb-0">
-						<a class="inline-block mb-6" href="<?php echo home_url() ?>">
+						<a class="inline-block w-[120px] mb-6" href="<?php echo home_url() ?>">
 							<?php get_template_part('template-parts/header', 'logo') ?>
 						</a>
-						<p class="mb-8">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+						<p class="mb-8">Some description for this footer whatever man. I guess I need another line just to make this look better.</p>
 						<?php get_template_part('template-parts/footer', 'socials') ?>
 					</div>
 					<div class="w-full md:w-1/2">
@@ -17,12 +16,12 @@
 			</div>
 		</footer>
 
-		<section class="footer-copyright">
+		<section class="footer-copyright bg-gray-200 text-sm">
 			<div class="container">
-				<div class="py-6 border-t border-gray-200">
-					<div class="flex flex-wrap items-center justify-between">
-						<div class="copyright">&copy; Sumatra Studio</div>
-						<ul class="flex space-x-6">
+				<div class="py-6 border-t border-gray-300">
+					<div class="md:flex flex-wrap items-center justify-between">
+						<div class="copyright mb-2 md:mb-0">&copy; Sumatra Studio</div>
+						<ul class="flex space-x-4 md:space-x-6">
 							<li><a href="">Terms & Conditions</a></li>
 							<li><a href="">Privacy Policy</a></li>
 						</ul>

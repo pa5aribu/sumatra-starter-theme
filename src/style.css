@@ -1,0 +1,20 @@
+/*
+	Theme Name: Sumatra Starter Theme
+	Author: Bhakti Pasaribu
+	Author URI: https://sumatrastudio.com
+    Version: 2
+*/
+
+/* components */
+@import "./components/font.css";
+@import "./components/aos.css";
+@import "./components/button.css";
+@import "./components/container.css";
+@import "./components/form.css";
+@import "./components/header.css";
+@import "./components/footer.css";
+@import "./components/article.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
