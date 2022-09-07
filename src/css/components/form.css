@@ -23,18 +23,18 @@
 	}
 	input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
     select, textarea {
-        display: block;
-        width: 100% !important;
-        padding: 10px 0;
-        border-bottom: 1px solid #000;
-        border-radius: 0;
-        background: none;
-        max-width: 100%;
-        transition: 0.3s all ease;
-        &:focus {
-            outline: none;
-            border-color: theme('colors.primary');
-	    }
+      display: block;
+      width: 100% !important;
+      padding: 10px 0;
+      border-bottom: 1px solid #000;
+      border-radius: 0;
+      background: none;
+      max-width: 100%;
+      transition: 0.3s all ease;
+      &:focus {
+        outline: none;
+        border-color: theme('colors.primary');
+    }
 	}
 	select {
 		-webkit-appearance: none;
@@ -50,18 +50,18 @@
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		cursor: pointer;
-        background-color: theme('colors.primary');
-        &:hover {
-            background-color: theme('colors.secondary');
-        }
+		background-color: theme('colors.primary');
+		&:hover {
+			background-color: theme('colors.secondary');
+		}
 	}
 }
 
 .dark-form {
 	.gform_wrapper {
 		input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
-        select, textarea {
-		    border-color: #fff;
+      select, textarea {
+      border-color: #fff;
 		}
 		select {
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 15'%3E%3Cpath fill='white' d='M2.83.17 12 9.34 21.17.17 24 3 12 15 0 3z'/%3E%3C/svg%3E");
@@ -72,14 +72,14 @@
 /* responsive */
 
 @media (min-width: theme('screens.md')) {
-    .gform_wrapper {
-        .gform_fields,
-        .ginput_complex {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        .w-full {
-            grid-column-start: 1;
-            grid-column-end: 3
-        }
+  .gform_wrapper {
+    .gform_fields,
+    .ginput_complex {
+      grid-template-columns: repeat(2, 1fr);
     }
+    .w-full {
+      grid-column-start: 1;
+      grid-column-end: 3
+    }
+  }
 }

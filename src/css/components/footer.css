@@ -1,11 +1,9 @@
 .footer-socials {
-
     a {
         display: inline-block;
     }
-
     svg {
         display: block;
-        height: 18px;
+        height: 30px;
     }
 }

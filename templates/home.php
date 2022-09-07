@@ -7,16 +7,16 @@
 
 ?>
 
-<section id="home" class="py-12 md:py-20 from-blue-500 to-purple-500 bg-gradient-to-r md:py-20 text-white">
+<section id="home" class="py-12 text-white md:py-20 from-blue-500 to-purple-500 bg-gradient-to-r">
 	<div class="container">
 		<div class="flex flex-wrap items-center">
 			<div class="mb-10 md:w-1/2 md:pr-8 lg:pr-16 md:mb-0">
-				<div data-aos="fade-up" class="mb-7 font-display font-bold text-4xl">Sumatra Starter Theme</div>
-				<div data-aos="fade-up" class="mb-8 space-y-6 leading-relaxed">
+				<div data-aos="fade-up" class="text-4xl font-bold mb-7 font-display">Sumatra Starter Theme</div>
+				<div data-aos="fade-up" class="mb-8 leading-relaxed space-y-6">
 					<p>
 						Sumatra Starter Theme is a WordPress starter theme created by balapa. This theme uses
-						<a class="underline text-white" href="https://tailwindcss.com/">TailwindCSS</a> to build UI easily and 
-						<a class="underline text-white" href="https://browsersync.io/">Browsersync</a> to reload the pages when you make changes.
+						<a class="text-white underline" href="https://tailwindcss.com/">TailwindCSS</a> to build UI easily and 
+						<a class="text-white underline" href="https://browsersync.io/">Browsersync</a> to reload the pages when you make changes.
 						 
 					</p>
 				</div>
@@ -31,9 +31,9 @@
 	</div>
 </section>
 
-<section class="py-12 md:py-24 bg-white">
+<section class="py-12 bg-gray-200 md:py-24">
 	<div class="container">
-		<div data-aos="fade-up" class="text-3xl font-display mb-8 font-semibold">Article</div>
+		<div data-aos="fade-up" class="mb-8 text-3xl font-semibold font-display">Article</div>
 		<?php
 			render_posts(array(
 				'post_type' => 'post',

@@ -245,19 +245,19 @@
 .gform_wrapper input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
     .gform_wrapper select,
     .gform_wrapper textarea {
-        display: block;
-        width: 100% !important;
-        padding: 10px 0;
-        border-bottom: 1px solid #000;
-        border-radius: 0;
-        background: none;
-        max-width: 100%;
-        transition: 0.3s all ease;
+      display: block;
+      width: 100% !important;
+      padding: 10px 0;
+      border-bottom: 1px solid #000;
+      border-radius: 0;
+      background: none;
+      max-width: 100%;
+      transition: 0.3s all ease;
 	}
 .gform_wrapper input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):focus, .gform_wrapper select:focus, .gform_wrapper textarea:focus {
-            outline: none;
-            border-color: #3867d6;
-	    }
+        outline: none;
+        border-color: #3867d6;
+    }
 .gform_wrapper select {
 		-webkit-appearance: none;
 		-moz-appearance: none;
@@ -272,29 +272,29 @@
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		cursor: pointer;
-        background-color: #3867d6;
+		background-color: #3867d6;
 	}
 .gform_wrapper [type="submit"]:hover {
-            background-color: #4b7bec;
-        }
+			background-color: #4b7bec;
+		}
 .dark-form .gform_wrapper input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
-        .dark-form .gform_wrapper select,
-        .dark-form .gform_wrapper textarea {
-		    border-color: #fff;
+      .dark-form .gform_wrapper select,
+      .dark-form .gform_wrapper textarea {
+      border-color: #fff;
 		}
 .dark-form .gform_wrapper select {
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 15'%3E%3Cpath fill='white' d='M2.83.17 12 9.34 21.17.17 24 3 12 15 0 3z'/%3E%3C/svg%3E");
 		}
 /* responsive */
 @media (min-width: 768px) {
-        .gform_wrapper .gform_fields,
-        .gform_wrapper .ginput_complex {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        .gform_wrapper .w-full {
-            grid-column-start: 1;
-            grid-column-end: 3
-        }
+    .gform_wrapper .gform_fields,
+    .gform_wrapper .ginput_complex {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .gform_wrapper .w-full {
+      grid-column-start: 1;
+      grid-column-end: 3
+    }
 }
 #header .burger-menu #on, #header .burger-menu #off {
 			transition: .3s all ease;
@@ -473,7 +473,7 @@
     }
 .footer-socials svg {
         display: block;
-        height: 18px;
+        height: 30px;
     }
 p a {
 		color: #000;
@@ -865,9 +865,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 *, ::before, ::after{--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }
+.fixed{position:fixed}
 .sticky{position:-webkit-sticky;position:sticky}
 .top-0{top:0px}
+.left-0{left:0px}
 .top-\[80px\]{top:80px}
+.z-50{z-index:50}
 .z-30{z-index:30}
 .mx-auto{margin-left:auto;margin-right:auto}
 .mb-8{margin-bottom:2rem}
@@ -879,10 +882,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-7{margin-bottom:1.75rem}
 .block{display:block}
 .inline-block{display:inline-block}
+.inline{display:inline}
 .flex{display:flex}
 .grid{display:grid}
-.hidden{display:none}
 .aspect-\[4\/2\.5\]{aspect-ratio:4 / 2.5}
+.h-full{height:100%}
 .h-\[80px\]{height:80px}
 .w-full{width:100%}
 .w-\[120px\]{width:120px}
@@ -892,6 +896,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .cursor-pointer{cursor:pointer}
 .flex-wrap{flex-wrap:wrap}
 .items-center{align-items:center}
+.justify-center{justify-content:center}
 .justify-between{justify-content:space-between}
 .gap-8{gap:2rem}
 .space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}
@@ -901,13 +906,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-t{border-top-width:1px}
 .border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity))}
 .border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity))}
+.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity))}
 .bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity))}
+.bg-primary{--tw-bg-opacity:1;background-color:rgb(56 103 214 / var(--tw-bg-opacity))}
 .bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}
 .bg-\[transparent\]{background-color:transparent}
+.bg-\[\#ddd\]{--tw-bg-opacity:1;background-color:rgb(221 221 221 / var(--tw-bg-opacity))}
 .bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}
 .from-blue-500{--tw-gradient-from:#3b82f6;--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to, rgb(59 130 246 / 0))}
 .to-purple-500{--tw-gradient-to:#a855f7}
-.to-red-500{--tw-gradient-to:#ef4444}
 .fill-current{fill:currentColor}
 .object-cover{-o-object-fit:cover;object-fit:cover}
 .p-8{padding:2rem}
@@ -917,6 +924,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .font-body{font-family:Open Sans, sans-serif}
 .font-display{font-family:Noto Serif, serif}
 .text-sm{font-size:0.875rem;line-height:1.25rem}
+.text-\[50px\]{font-size:50px}
 .text-3xl{font-size:1.875rem;line-height:2.25rem}
 .text-lg{font-size:1.125rem;line-height:1.75rem}
 .text-4xl{font-size:2.25rem;line-height:2.5rem}

@@ -1,3 +1,0 @@
-// ANIMATIONS
-export const animations = {
-}
