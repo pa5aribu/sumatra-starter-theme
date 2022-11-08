@@ -13,4 +13,4 @@ WordPress development. It also comes with stylus to write CSS that can't be achi
 
 --
 
-Created by @balapa
+Created by @pa5aribu
